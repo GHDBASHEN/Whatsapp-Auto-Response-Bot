@@ -2,8 +2,6 @@
 ![image](https://github.com/user-attachments/assets/76ab1faa-8ff8-4cac-920a-21b9823bd8b1)
 
 
-![WhatsApp Auto Response Bot Logo](https://via.placeholder.com/150)  <!-- Replace with your project logo or image URL -->
-
 An automated WhatsApp bot that responds to incoming messages based on pre-configured patterns. This bot is designed to save time and automate basic responses to common messages on WhatsApp.
 
 ---
