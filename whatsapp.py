@@ -32,3 +32,21 @@ def post_response(message):
         pt.typewrite("\n", interval=0.01)
 
 
+def process_response(message):
+    """Generate a response based on the message content."""
+    if "?" in message.lower():
+        return "Interesting question, I'll talk to you about that later - Bot GHDB"
+    elif "hi" in message.lower():
+        return "Hey, a bit busy right now. Just drop a message, I'll talk to you later - Bot GHDB"
+    elif "happy new year" in message.lower():
+        return "Wishing you and your family a very Happy New Year! ✨ - Bot GHDB"
+    elif "good morning" in message.lower():
+        return "Good Morning! Have a great day!"
+    elif "good night" in message.lower():
+        return "Good Night! Sleep tight!"
+    else:
+        return "Hello! GHDB is currently unavailable. Please leave a message - Bot GHDB"
+
+
+
+
