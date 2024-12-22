@@ -47,6 +47,43 @@ def process_response(message):
     else:
         return "Hello! GHDB is currently unavailable. Please leave a message - Bot GHDB"
 
+def check_for_new_messages():
+    # Re-locate the smiley image to update the coordinates
+    position = pt.locateOnScreen("smiley.png", confidence=0.6)
+    if position is not None:
+        x, y = position[0], position[1]
+    else:
+        print("Smiley icon not found!")
+        return
 
+    pt.moveTo(x + 50, y - 45, duration=0.5)
+
+    while True:
+        try:
+            position = pt.locateOnScreen("circle.png", confidence=0.6)
+            if position:
+                print("New message detected at:", position)
+                pt.moveTo(position)
+                pt.moveRel(-100, 0)
+                pt.click()
+                processed_message = process_response(get_message())
+                post_response(processed_message)
+                sleep(10)
+            else:
+                print("No new messages.")
+                sleep(10)
+        except pyautogui.ImageNotFoundException:
+            print("Image not found. Check circle.png or smiley.png.")
+            sleep(10)
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+            sleep(10)
+
+
+
+
+# Start the bot
+sleep(3)  # Allow time to prepare the screen
+check_for_new_messages()
 
 
