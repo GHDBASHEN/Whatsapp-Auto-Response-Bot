@@ -31,7 +31,7 @@ def post_response(message):
         pt.typewrite(message, interval=0.01)
         pt.typewrite("\n", interval=0.01)
 
-
+#position gaining very slow and doesn't work well
 def process_response(message):
     """Generate a response based on the message content."""
     if "?" in message.lower():
